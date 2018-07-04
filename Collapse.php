@@ -24,6 +24,7 @@ class Collapse
         'role' => 'button',
         'active' => 'show',
         'paneClass' => 'collapse',
+        'data-parent' => '',
     );
 
     static function example()
@@ -74,9 +75,8 @@ class Collapse
 
     function set_defaults( $defaults )
     {
-        $def = apply_filters( 'Collapse::set_defaults', array_merge($this->def, $defaults) );
+        $this->def = apply_filters( 'Collapse::set_defaults', array_merge($this->def, $defaults) );
 
-        $this->def = $def;
     }
 
     function controlAttrs( $collapse )
@@ -124,6 +124,11 @@ class Collapse
             'class' => $this->def['paneClass'],
             'id' => $collapse['id'],
         );
+
+        if( $this->def['data-parent'] || !empty($collapse['data-parent']) ) {
+            $_attrs['data-parent'] = !empty($collapse['data-parent']) ?
+                $collapse['data-parent'] : $this->def['data-parent'];
+        }
 
         if($this->active == $collapse['id'])
             $_attrs['class'] .= ' ' . $this->def['active'];

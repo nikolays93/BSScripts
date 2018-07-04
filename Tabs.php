@@ -13,9 +13,7 @@ class Tabs extends Collapse
             'paneClass' => 'tab-pane',
         );
 
-        $def = apply_filters( 'Tabs::set_defaults', array_merge($_def, $defaults) );
-
-        $this->def = $def;
+        $this->def = apply_filters( 'Tabs::set_defaults', array_merge($this->def, $_def, $defaults) );
     }
 
     function pane( $collapse, $pane = '' )

@@ -92,11 +92,16 @@ class Collapse
 
             'role' => $this->def['role'],
 
-            'aria-expanded' => ($this->active == $collapse['id']) ? 'true' : 'false',
+            'aria-expanded' => 'false',
 
             'aria-controls' => isset( $collapse['aria-controls'] ) ?
                 $collapse['aria-controls'] : $collapse['id'],
         );
+
+        if( $this->active == $collapse['id'] ) {
+            $_attrs['class'] .= ' ' . $this->def['active'];
+            $_attrs['aria-expanded'] = 'true';
+        }
 
         if( 'button' == $collapse['type'] ) {
             $_attrs['type'] = 'button';

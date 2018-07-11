@@ -10,6 +10,7 @@ class Tabs extends Collapse
             'type' => 'a',
             'data-toggle' => 'tab',
             'active' => 'active show',
+            'ctrlClass' => 'nav-link',
             'paneClass' => 'tab-pane',
         );
 

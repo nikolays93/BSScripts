@@ -41,6 +41,9 @@ class Collapse
         if( empty($val['id']) && apply_filters('Collapse::check_element_id', 1) )
             return;
 
+        if( !$this->active )
+            $this->active = $val['id'];
+
         $this->data[ $key ][] = $val;
     }
 
@@ -55,14 +58,6 @@ class Collapse
     function __construct($collapses = array(), $active = false, $defaults = array())
     {
         $this->set_defaults( $defaults );
-
-        if( !$active ) {
-            reset( $collapses );
-            $active = current( $collapses );
-            if( isset( $active['id'] ) )
-                $active = $active['id'];
-        }
-
         $this->active = $active;
 
         foreach ($collapses as $collapse) {

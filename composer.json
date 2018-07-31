@@ -1,0 +1,14 @@
+{
+    "name": "nikolays93/bs-scripts",
+    "description": "My bootstrap collapse helpers",
+    "authors": [
+        {
+            "name": "nikolays93",
+            "email": "nikolays93@ya.ru"
+        }
+    ],
+    "autoload": {
+        "psr-4": { "Nikolays93\\BSScripts\\": "src/" }
+    },
+    "require": {}
+}

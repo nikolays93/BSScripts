@@ -1,6 +1,6 @@
 <?php
 
-namespace BSScripts;
+namespace Nikolays93\BSScripts;
 
 class Tabs extends Collapse
 {

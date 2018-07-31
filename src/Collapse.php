@@ -1,6 +1,6 @@
 <?php
 
-namespace BSScripts;
+namespace Nikolays93\BSScripts;
 
 if( !function_exists('apply_filters') ) {
     function apply_filters( $tag, $value = false, $arg1 = null, $arg2 = null, $arg3 = null ) {
